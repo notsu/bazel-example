@@ -5,6 +5,7 @@ go_library(
     srcs = ["ping.go"],
     importpath = "github.com/notsu/bazel-example/service/user/ping",
     visibility = ["//visibility:public"],
+    deps = ["//service/post/pong:go_default_library"],
 )
 
 go_test(
