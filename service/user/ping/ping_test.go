@@ -1,29 +1,28 @@
 package ping_test
 
 import (
-	"fmt"
-	"testing"
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
 
 	ping "github.com/notsu/bazel-example/service/user/ping"
 )
 
-func TestPing(t *testing.T) {
-	got := ping.Ping()
-	want := "Ping"
+var _ = Describe("Ping", func() {
+	Context("when ping", func() {
+		It("should ping", func() {
+			got := ping.Ping()
+			want := "Ping"
 
-	if got != want {
-		t.Errorf("Ping was incorrect, got: %s, want: %s", got, want)
-	}
-}
+			Expect(got).To(Equal(want))
+		})
+	})
 
-func TestPingPong(t *testing.T) {
-	got := ping.PingPong()
-	want := "PingPong"
+	Context("when ping", func() {
+		It("should ping", func() {
+			got := ping.PingPong()
+			want := "PingPong"
 
-	fmt.Println(got)
-	fmt.Println(want)
-
-	if got != want {
-		t.Errorf("PingPong was incorrect, got: %s, want: %s", got, want)
-	}
-}
+			Expect(got).To(Equal(want))
+		})
+	})
+})
