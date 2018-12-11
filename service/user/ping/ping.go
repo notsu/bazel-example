@@ -6,7 +6,7 @@ import (
 
 // Ping a request
 func Ping() string {
-	return "Ping"
+	return "Ping 2"
 }
 
 // PingPong returns a combination string with Ping and Pong

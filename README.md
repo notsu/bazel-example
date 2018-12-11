@@ -14,7 +14,7 @@ You need to install [Bazel](https://docs.bazel.build/versions/master/install.htm
 
 - Run `bazel run //:gazelle` to generate `BUILD` for each package including update dependencies
 - Run `bazel run //:gazelle -- update-repos -from_file=__PATH_TO_GO_MOD_FILE__/go.mod` to update external dependencies in WORKSPACE
-- Run `bazel test //...` to test all service. You can see which test using a cache or not. And it's also testing other services if they depend on each other
+- Run `bazel test --test_output=streamed //...` to test all service. You can see which test using a cache or not. And it's also testing other services if they depend on each other
 - Run `bazel build //...` to build all service. Same as the testing, it uses the cache and builds all dependencies service
 
 ## Built with
